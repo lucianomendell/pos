@@ -1,0 +1,24 @@
+<div class="container">
+  <h2>Cadastro de Convidado</h2>
+
+  <table class="col s12">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>Faixa Etária</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr
+        *ngFor="let convidado of this.litstaConvidados"
+        (click)="onClickItem(convidado)"
+      >
+        <td>{{ convidado?.nome }}</td>
+        <td>{{ convidado?.telefone }}</td>
+        <td>{{ convidado?.faixaEtaria }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ErrorStateMatcher } from '@angular/material/core';
+import { Convidado } from './../../../model/convidado';
+import { Component, OnInit, Output } from '@angular/core';
 
 import {
   FormControl,
@@ -7,6 +7,7 @@ import {
   FormGroup,
   FormBuilder,
 } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastro',
@@ -14,10 +15,13 @@ import {
   styleUrls: ['./cadastro.component.css'],
 })
 export class CadastroComponent implements OnInit {
+  @Output() litstaConvidados: Convidado[] = []; //Componete Pai
+
   donationValue?: number;
   formCliente: FormGroup;
+  convidados: Convidado[] = [];
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private router: Router) {
     this.formCliente = new FormGroup({});
   }
 
@@ -53,11 +57,20 @@ export class CadastroComponent implements OnInit {
   }
 
   onSubmit() {
-    // aqui você pode implementar a logica para fazer seu formulário salvar
-    console.log(this.formCliente.value);
-  }
+    let convidado = new Convidado();
+    convidado.nome = this.formCliente.controls['nome'].value;
+    convidado.telefone = this.formCliente.controls['telefone'].value;
+    convidado.endereco = this.formCliente.controls['endereco'].value;
+    convidado.faixaEtaria = this.formCliente.controls['faixaEtaria'].value;
+    this.convidados?.push(convidado);
 
-  onChanged = function () {
-    alert('changed!');
-  };
+    if (
+      !this.formCliente.get('nome')?.hasError('required') &&
+      !this.formCliente.get('faixaEtaria')?.hasError('required')
+    ) {
+      this.litstaConvidados.push(convidado);
+    }
+
+    // this.router.navigate(['detalhes']);
+  }
 }

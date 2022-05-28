@@ -15,6 +15,8 @@ import { ReactiveFormsModule, FormGroup } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { MatInputModule } from '@angular/material/input';
+import { ListarConvidadoComponent } from './component/convidado/listar-convidado/listar-convidado.component';
+import { DetalhesComponent } from './component/convidado/detalhes/detalhes.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { MatInputModule } from '@angular/material/input';
     CadastroComponent,
     MenuComponent,
     RodapeComponent,
+    ListarConvidadoComponent,
+    DetalhesComponent,
   ],
   imports: [
     CommonModule,
