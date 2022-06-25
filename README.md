@@ -1,3 +1,12 @@
+# SIS-EVF
+
+O sistema de Eventos familiar tem por finalidade ajudar a realizar o controle de comemorações da família. Nele é possível realizar o cadastro de aniversariantes ou de alguma comemoração que seja importante, possibilitando um planejamento ideal sem que a data caia em esquecimento.
+O sistema consiste em realizar cadastro de convidados com sua faixa etária, dessa forma ao criar um evento é possível associar o convidado ao evento criado, facilitando no planejamento do que será necessário para que tal evento ocorra.
+
+
+# Endereço de Deploy - Git Pages
+https://lucianomendell.github.io/sis-evf/convidados
+
 # Protótipo
 
 https://www.figma.com/files/project/56116685/Sistema-Controle-Eventos?fuid=873035224094993697
@@ -21,4 +30,4 @@ https://www.figma.com/files/project/56116685/Sistema-Controle-Eventos?fuid=87303
 - [x] Apresentar uma lista de dados com a diretiva estrutural ngFor.
 - [x] Usar a diretiva ngIf
 - [x] Formatar a apresentação de dados com Pipes.
-- [ ] Build e deploy da aplicação.
+- [x] Build e deploy da aplicação.
