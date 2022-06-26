@@ -40,7 +40,8 @@ export class DetalhesConvidadoComponent implements OnInit {
 
   constructor(
     private router: ActivatedRoute,
-    private convidadoService: ConvidadoServiceService
+    private convidadoService: ConvidadoServiceService,
+    private route: Router
   ) {}
 
   ngOnInit(): void {
@@ -59,5 +60,8 @@ export class DetalhesConvidadoComponent implements OnInit {
   }
   get f() {
     return this.formConvidado.controls;
+  }
+  voltarListar() {
+    this.route.navigate(['convidados']);
   }
 }

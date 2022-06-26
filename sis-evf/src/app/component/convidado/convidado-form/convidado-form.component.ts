@@ -77,7 +77,7 @@ export class ConvidadoFormComponent implements OnInit {
         }
       );
 
-      this.router.navigate(['listar']);
+      this.router.navigate(['convidados']);
     }
   }
 
